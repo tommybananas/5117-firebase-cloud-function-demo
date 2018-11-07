@@ -1,0 +1,7 @@
+<h1>Image Upload Demo</h1>
+
+<file-drop [headertext]="'Drop Image Here'" (onFileDrop)="dropped($event)">
+  <span></span>
+</file-drop>
+
+<img [src]="imageUrl" *ngIf="imageUrl" />

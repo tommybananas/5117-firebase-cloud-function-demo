@@ -11,11 +11,15 @@ import { VoteComponent } from './vote/vote.component';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {MatInputModule} from '@angular/material/input';
 import {MatButtonModule} from '@angular/material/button';
+import { UploadComponent } from './upload/upload.component';
+import { FileDropModule } from 'ngx-file-drop';
+import { AngularFireStorageModule } from '@angular/fire/storage';
 
 @NgModule({
   declarations: [
     AppComponent,
-    VoteComponent
+    VoteComponent,
+    UploadComponent
   ],
   imports: [
     BrowserModule,
@@ -24,7 +28,9 @@ import {MatButtonModule} from '@angular/material/button';
     AngularFirestoreModule,
     BrowserAnimationsModule,
     MatInputModule,
-    MatButtonModule
+    MatButtonModule,
+    FileDropModule,
+    AngularFireStorageModule
   ],
   providers: [],
   bootstrap: [AppComponent]
