@@ -1,0 +1,24 @@
+<h1>Voting App</h1>
+
+<mat-form-field>
+  <input matInput placeholder="Voter name:" value="Jim" #name>
+</mat-form-field>
+
+<div>
+  <button mat-button mat-raised-button color="primary" (click)="vote(name.value,'purple')">Purple</button>
+  <button mat-button mat-raised-button color="accent" (click)="vote(name.value,'pink')">Pink</button>
+  <button mat-button mat-raised-button color="warn" (click)="vote(name.value,'orange')">Orange</button>
+</div>
+
+<h3>Votes</h3>
+<div *ngFor="let voter of voters | async">
+  {{ voter.name }} - {{ voter.color }}
+</div>
+<br /><br />
+<h3>Total Count</h3>
+<div *ngFor="let choice of results | async">
+  {{ choice.color }} - {{ choice.count }}
+</div>
+
+
+<button (click)="reset()">Reset</button>
